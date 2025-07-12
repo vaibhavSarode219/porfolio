@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaibhav Sarode - Full-Stack Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">AC</a>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fas fa-sun" id="themeIcon"></i>
+                </button>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="animated-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-name">Vaibhav Sarode</h1>
+                    <h2 class="typing-effect" id="typingText">Full-Stack Developer</h2>
+                    <p class="hero-description">
+                        Building scalable software with a creative edge. Passionate about modern web technologies and
+                        innovative user experiences.
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="neon-btn primary" onclick="scrollToSection('projects')">
+                            <span>$ ./explore-projects</span>
+                            <i class="fas fa-terminal"></i>
+                        </button>
+                        <button class="neon-btn secondary" onclick="downloadResume()">
+                            <span>$ cat resume.pdf</span>
+                            <i class="fas fa-download"></i>
+                        </button>
+                        <button class="neon-btn accent" onclick="openGitHub()">
+                            <span>$ git remote -v</span>
+                            <i class="fab fa-github"></i>
+                        </button>
+                    </div>
+
+                    <!-- <div class="code-snippet">
+                        <div class="code-header">
+                            <div class="code-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="code-title">developer.js</span>
+                        </div>
+                        <div class="code-content">
+                            <pre><code class="language-javascript">const developer = {
+  name: 'Alex Chen',
+  role: 'Full-Stack Developer',
+  skills: ['React', 'Node.js', 'Python', 'AWS'],
+  passion: 'Building amazing web experiences',
+  
+  createMagic: () => {
+    return 'Clean code + Great UX';
+  }
+};</code></pre>
+                        </div>
+                    </div> -->
+
+                    <!-- Interactive Terminal Console -->
+                    <!-- <div class="terminal-console">
+                        <div class="terminal-header">
+                            <div class="terminal-controls">
+                                <span class="control close"></span>
+                                <span class="control minimize"></span>
+                                <span class="control maximize"></span>
+                            </div>
+                            <span class="terminal-title">alex@portfolio:~$</span>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="terminal-line">
+                                <span class="prompt">alex@portfolio:~$</span>
+                                <span class="command">whoami</span>
+                            </div>
+                            <div class="terminal-output">Full-Stack Developer | Problem Solver | Tech Enthusiast</div>
+                            <div class="terminal-line">
+                                <span class="prompt">alex@portfolio:~$</span>
+                                <span class="command">ls skills/</span>
+                            </div>
+                            <div class="terminal-output">react.js node.js python aws docker mongodb postgresql</div>
+                            <div class="terminal-line">
+                                <span class="prompt">alex@portfolio:~$</span>
+                                <span class="typing-cursor">_</span>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="hero-image">
+                    <div class="laptop-container">
+                        <svg class="laptop-svg" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="50" y="200" width="400" height="150" rx="10" fill="url(#laptopGradient)"
+                                stroke="url(#neonBorder)" stroke-width="2" />
+                            <rect x="70" y="80" width="360" height="220" rx="8" fill="url(#screenGradient)"
+                                stroke="url(#neonBorder)" stroke-width="2" />
+                            <g class="code-lines">
+                                <rect x="90" y="110" width="200" height="8" rx="4" fill="hsl(193,100%,50%)"
+                                    opacity="0.8">
+                                    <animate attributeName="width" values="200;250;200" dur="3s"
+                                        repeatCount="indefinite" />
+                                </rect>
+                                <rect x="90" y="130" width="180" height="8" rx="4" fill="hsl(273,77%,58%)"
+                                    opacity="0.8">
+                                    <animate attributeName="width" values="180;220;180" dur="2.5s"
+                                        repeatCount="indefinite" />
+                                </rect>
+                                <rect x="110" y="150" width="150" height="8" rx="4" fill="hsl(74,83%,51%)"
+                                    opacity="0.8">
+                                    <animate attributeName="width" values="150;200;150" dur="3.5s"
+                                        repeatCount="indefinite" />
+                                </rect>
+                                <rect x="110" y="170" width="220" height="8" rx="4" fill="hsl(329,100%,50%)"
+                                    opacity="0.8">
+                                    <animate attributeName="width" values="220;270;220" dur="2.8s"
+                                        repeatCount="indefinite" />
+                                </rect>
+                                <rect x="90" y="190" width="160" height="8" rx="4" fill="hsl(45,100%,51%)"
+                                    opacity="0.8">
+                                    <animate attributeName="width" values="160;210;160" dur="3.2s"
+                                        repeatCount="indefinite" />
+                                </rect>
+                            </g>
+                            <defs>
+                                <linearGradient id="laptopGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:var(--laptop-gradient-start);stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:var(--laptop-gradient-end);stop-opacity:1" />
+                                </linearGradient>
+                                <linearGradient id="screenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:var(--screen-gradient-start);stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:var(--screen-gradient-end);stop-opacity:1" />
+                                </linearGradient>
+                                <linearGradient id="neonBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:hsl(193,100%,50%);stop-opacity:0.8" />
+                                    <stop offset="100%" style="stop-color:hsl(273,77%,58%);stop-opacity:0.8" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+
+                    <!-- Floating Tech Icons -->
+                    <div class="tech-icon react-icon">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <div class="tech-icon node-icon">
+                        <i class="fab fa-node-js"></i>
+                    </div>
+                    <div class="tech-icon js-icon">
+                        <i class="fab fa-js-square"></i>
+                    </div>
+                    <div class="tech-icon angular-icon">
+                        <i class="fab fa-angular"></i>
+                    </div>
+                    <div class="tech-icon aws-icon">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <div class="tech-icon docker-icon">
+                        <i class="fab fa-docker"></i>
+                    </div>
+                    <div class="tech-icon db-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="tech-icon mongo-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="tech-icon redux-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card" data-project="ecommerce">
+                    <div class="project-status">
+                        <span class="status-dot active"></span>
+                        <span class="status-text">Live</span>
+                    </div>
+                    <div class="project-header">
+                        <h3>Airtrottle</h3>
+                    </div>
+                    <!-- <div class="project-code-preview">
+                        <code>
+                            <span class="code-comment">// Frontend Application</span><br>
+                            <span class="code-keyword">const</span> <span class="code-variable">app</span> = <span class="code-function">express</span>();<br>
+                            <span class="code-variable">app</span>.<span class="code-method">use</span>(<span class="code-string">'/api'</span>, routes);
+                        </code>
+                    </div> -->
+                    <p class="project-description">
+                        Full-stack tours and travels solution with Angular frontend, php backend, and sql database.
+                        Features include user authentication, payment integration, and admin dashboard.
+                    </p>
+                    <div class="project-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-code"></i>
+                            <span>15K+ lines</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-users"></i>
+                            <span>500+ users</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-star"></i>
+                            <span>3.8/5 rating</span>
+                        </div>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag react">Angular</span>
+                        <span class="tech-tag node">Php</span>
+                        <span class="tech-tag database">SQL</span>
+                        <span class="tech-tag payment">Stripe</span>
+                    </div>
+                </div>
+
+                <div class="project-card" data-project="taskmanager">
+                    <div class="project-status">
+                        <span class="status-dot development"></span>
+                        <span class="status-text">Development</span>
+                    </div>
+                    <div class="project-header">
+                        <h3>Task Management App</h3>
+                        <div class="project-links">
+                            <a href="#" class="project-link" title="GitHub Repository"><i class="fab fa-github"></i></a>
+                            <a href="#" class="project-link" title="Live Demo"><i
+                                    class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="project-link" title="Documentation"><i class="fas fa-book"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-code-preview">
+                        <code>
+                            <span class="code-comment">// Real-time WebSocket connection</span><br>
+                            <span class="code-keyword">io</span>.<span class="code-method">on</span>(<span class="code-string">'connection'</span>, (socket) => {<br>
+                            &nbsp;&nbsp;<span class="code-variable">socket</span>.<span class="code-method">emit</span>(<span class="code-string">'taskUpdate'</span>);<br>
+                            });
+                        </code>
+                    </div>
+                    <p class="project-description">
+                        Collaborative task management application with real-time updates, drag-and-drop functionality,
+                        and team collaboration features.
+                    </p>
+                    <div class="project-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-code"></i>
+                            <span>12K+ lines</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-users"></i>
+                            <span>200+ users</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Real-time</span>
+                        </div>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag angular">Angular</span>
+                        <span class="tech-tag node">Express</span>
+                        <span class="tech-tag database">PostgreSQL</span>
+                        <span class="tech-tag websocket">Socket.io</span>
+                    </div>
+                </div>
+
+                <div class="project-card" data-project="weather">
+                    <div class="project-status">
+                        <span class="status-dot active"></span>
+                        <span class="status-text">Live</span>
+                    </div>
+                    <div class="project-header">
+                        <h3>Weather Dashboard</h3>
+                        <div class="project-links">
+                            <a href="#" class="project-link" title="GitHub Repository"><i class="fab fa-github"></i></a>
+                            <a href="#" class="project-link" title="Live Demo"><i
+                                    class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="project-link" title="API Docs"><i class="fas fa-book"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-code-preview">
+                        <code>
+                            <span class="code-comment">// PWA with service worker</span><br>
+                            <span class="code-keyword">if</span> (<span class="code-string">'serviceWorker'</span> <span class="code-keyword">in</span> navigator) {<br>
+                            &nbsp;&nbsp;navigator.<span class="code-method">register</span>(<span class="code-string">'/sw.js'</span>);<br>
+                            }
+                        </code>
+                    </div>
+                    <p class="project-description">
+                        Interactive weather dashboard with geolocation, forecasts, and data visualization. Built with
+                        modern web technologies and responsive design.
+                    </p>
+                    <div class="project-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-code"></i>
+                            <span>8K+ lines</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>PWA</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Data Viz</span>
+                        </div>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag javascript">JavaScript</span>
+                        <span class="tech-tag chart">Chart.js</span>
+                        <span class="tech-tag api">API Integration</span>
+                        <span class="tech-tag pwa">PWA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-badge angular-skill">
+                    <i class="fab fa-angular"></i>
+                    <span>Angular</span>
+                </div>
+                <div class="skill-badge nodejs-skill">
+                    <i class="fab fa-node-js"></i>
+                    <span>Node.js</span>
+                </div>
+                <div class="skill-badge postman-skill">
+                    <i class="fas fa-paper-plane"></i>
+                    <span>Postman</span>
+                </div>
+                <div class="skill-badge mongodb-skill">
+                    <i class="fas fa-leaf"></i>
+                    <span>MongoDB</span>
+                </div>
+                <div class="skill-badge aws-skill">
+                    <i class="fab fa-aws"></i>
+                    <span>AWS Lambda</span>
+                </div>
+                <div class="skill-badge dynamodb-skill">
+                    <i class="fas fa-database"></i>
+                    <span>AWS DynamoDB</span>
+                </div>
+                <div class="skill-badge sql-skill">
+                    <i class="fas fa-database"></i>
+                    <span>SQL</span>
+                </div>
+                <div class="skill-badge redux-skill">
+                    <i class="fas fa-cube"></i>
+                    <span>Redux</span>
+                </div>
+                <div class="skill-badge rxjs-skill">
+                    <i class="fas fa-stream"></i>
+                    <span>RxJS</span>
+                </div>
+                <div class="skill-badge react-skill">
+                    <i class="fab fa-react"></i>
+                    <span>React</span>
+                </div>
+                <div class="skill-badge js-skill">
+                    <i class="fab fa-js-square"></i>
+                    <span>JavaScript</span>
+                </div>
+                <div class="skill-badge python-skill">
+                    <i class="fab fa-python"></i>
+                    <span>Python</span>
+                </div>
+                <div class="skill-badge docker-skill">
+                    <i class="fab fa-docker"></i>
+                    <span>Docker</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Senior Full-Stack Developer</h3>
+                        <h4>TechCorp Solutions</h4>
+                        <span class="timeline-date">2022 - Present</span>
+                        <p>Leading development of scalable web applications using React, Node.js, and cloud
+                            technologies. Mentoring junior developers and implementing best practices.</p>
+                        <ul>
+                            <li>Architected microservices handling 1M+ daily requests</li>
+                            <li>Reduced application load times by 40% through optimization</li>
+                            <li>Led team of 5 developers on critical projects</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Full-Stack Developer</h3>
+                        <h4>Digital Innovations Inc.</h4>
+                        <span class="timeline-date">2020 - 2022</span>
+                        <p>Developed and maintained multiple client projects using modern web technologies. Collaborated
+                            with design teams to create engaging user experiences.</p>
+                        <ul>
+                            <li>Built 15+ responsive web applications</li>
+                            <li>Implemented CI/CD pipelines reducing deployment time by 60%</li>
+                            <li>Integrated third-party APIs and payment systems</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Frontend Developer</h3>
+                        <h4>StartupXYZ</h4>
+                        <span class="timeline-date">2019 - 2020</span>
+                        <p>Focused on creating intuitive user interfaces and optimizing user experience. Worked closely
+                            with UX designers to implement pixel-perfect designs.</p>
+                        <ul>
+                            <li>Developed responsive React components library</li>
+                            <li>Improved accessibility compliance to WCAG 2.1 standards</li>
+                            <li>Collaborated with cross-functional teams on product features</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm a passionate full-stack developer with over 5 years of experience building modern web
+                        applications.
+                        I love creating efficient, scalable solutions that solve real-world problems and deliver
+                        exceptional user experiences.
+                    </p>
+                    <p>
+                        When I'm not coding, you can find me exploring new technologies, contributing to open-source
+                        projects,
+                        or sharing knowledge with the developer community through blog posts and speaking at tech
+                        meetups.
+                    </p>
+                    <div class="stats">
+                        <div class="stat">
+                            <h3>50+</h3>
+                            <p>Projects Completed</p>
+                        </div>
+                        <div class="stat">
+                            <h3>5+</h3>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat">
+                            <h3>20+</h3>
+                            <p>Happy Clients</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>alex.chen@email.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Location</h3>
+                            <p>San Francisco, CA</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="neon-btn primary">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-logo">Alex Chen</h3>
+                    <p class="footer-description">
+                        Building innovative web solutions with modern technologies. Let's create something amazing
+                        together.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Mobile Apps</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                        <li><a href="#">Consulting</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-envelope"></i> alex@example.com</p>
+                        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                        <p><i class="fas fa-map-marker-alt"></i> San Francisco, CA</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2025 Alex Chen. All rights reserved.</p>
+                </div>
+                <div class="footer-links-bottom">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
